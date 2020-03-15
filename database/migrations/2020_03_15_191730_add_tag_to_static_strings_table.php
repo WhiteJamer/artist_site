@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFullnameProfessionTaglineToUsersTable extends Migration
+class AddTagToStaticStringsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,7 @@ class AddFullnameProfessionTaglineToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('full_name', 250);
-            $table->string('profession', 250);
-            $table->string('tagline', 250); # слоган
+            $table->string('tag', 70); # тег строки по которой будем искать в бд
         });
     }
 
@@ -28,9 +26,7 @@ class AddFullnameProfessionTaglineToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('full_name');
-            $table->dropColumn('profession');
-            $table->dropColumn('tagline');
+            $table->dropColumn('tag');
         });
     }
 }
