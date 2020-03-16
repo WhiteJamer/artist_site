@@ -17,5 +17,8 @@ class Art extends Model
 
     protected $guarded = ['views', 'user_id'];
 
+    public function owner(){
+        return $this->hasOne('App\models\User');
+    }
 
 }

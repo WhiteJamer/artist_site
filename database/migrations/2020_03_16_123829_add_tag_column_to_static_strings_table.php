@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTagToStaticStringsTable extends Migration
+class AddTagColumnToStaticStringsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddTagToStaticStringsTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('tag', 70); # тег строки по которой будем искать в бд
+        Schema::table('static_strings', function (Blueprint $table) {
+            $table->string('tag', 255);
         });
     }
 
@@ -25,7 +25,7 @@ class AddTagToStaticStringsTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('static_strings', function (Blueprint $table) {
             $table->dropColumn('tag');
         });
     }
