@@ -17,8 +17,14 @@ class Art extends Model
 
     protected $guarded = ['views', 'user_id'];
 
-    public function owner(){
+    public function owner()
+    {
         return $this->hasOne('App\models\User');
+    }
+    // Получить недавние работы
+    static function getRecentArts($count)
+    {
+        return static::orderBy('updated_at', 'desc')->paginate($count);
     }
 
 }
