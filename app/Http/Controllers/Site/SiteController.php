@@ -21,7 +21,7 @@ class SiteController extends Controller
     }
     public function artList()
     {
-        $arts = Art::get();
+        $arts = Art::paginate(12);
         return view('site.arts.index', ['arts' => $arts]);
     }
 

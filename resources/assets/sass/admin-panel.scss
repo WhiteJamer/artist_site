@@ -13,6 +13,7 @@ $btnSecondary_color: $whiteColor;
 
 $btnPrimary_bg: #ffa000;
 $btnPrimary_color: $whiteColor;
+$grey_bg: #90a4ae;
 img{
   object-fit: cover;
   object-position: 50% 50%;
@@ -41,7 +42,7 @@ body{
       letter-spacing: 3px;
       /*text-transform: uppercase;*/
       text-decoration: none;
-      color: $activeColor;
+      color: $darkColor;
       padding: 2rem 3rem;
 
       background: $nav_bgColor;
@@ -63,10 +64,10 @@ thead{
 }
 th{
   padding: 1rem;
-  background: $nav_bgColor_active;
+  background: $grey_bg;
   font-weight: 700;
   text-align: start;
-  color: $nav_bgColor;
+  color: $darkColor;
 }
 td{
   a{
@@ -75,7 +76,7 @@ td{
   }
   vertical-align: top;
   padding: 1rem;
-  border-bottom: 0.1rem solid $nav_bgColor_active;
+  border-bottom: 0.1rem solid $grey_bg;
   padding-top: 3rem;
 }
 th[scope='row']{

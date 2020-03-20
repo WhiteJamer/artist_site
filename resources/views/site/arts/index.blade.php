@@ -15,9 +15,10 @@
                              data-description="{{$art->description}}"
                              data-id="{{$art->id}}"
                         >
-
                 </div>
             @endforeach
         </div>
+        {{--Pagination--}}
+        {{$arts->links('pagination.default')}}
     </div>
 @endsection

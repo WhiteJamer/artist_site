@@ -305,3 +305,26 @@ footer{
 		border-radius: 10rem;
 	}
 }
+
+/* Pagination */
+.pagination{
+	margin-top: 3rem;
+	li{
+		margin: 0 0.1rem;
+		display: flex;
+		background: $ct_bg;
+		border: 0.1rem solid transparent;
+		&.disabled{
+			background: $ct_bg;
+			color: $border_light;
+		}
+		&.active{
+			color: $second_info_color;
+			background: $active_color;
+		}
+		& *{
+			color: $second_info_color;
+			padding: 1rem;
+		}
+	}
+}

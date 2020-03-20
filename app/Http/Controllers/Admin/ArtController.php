@@ -16,7 +16,7 @@ class ArtController extends Controller
      */
     public function index()
     {
-        $arts = Art::simplePaginate(5);;
+        $arts = Art::paginate(10);;
         return  view('admin.arts.index', compact('arts'));
     }
 
@@ -27,7 +27,7 @@ class ArtController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -38,7 +38,7 @@ class ArtController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

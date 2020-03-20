@@ -33,7 +33,7 @@ body {
   letter-spacing: 3px;
   /*text-transform: uppercase;*/
   text-decoration: none;
-  color: #ffa000;
+  color: #212121;
   padding: 2rem 3rem;
   background: #fafafa;
   border-bottom: 0.1rem solid transparent;
@@ -55,16 +55,16 @@ thead {
 
 th {
   padding: 1rem;
-  background: #ffa000;
+  background: #90a4ae;
   font-weight: 700;
   text-align: start;
-  color: #fafafa;
+  color: #212121;
 }
 
 td {
   vertical-align: top;
   padding: 1rem;
-  border-bottom: 0.1rem solid #ffa000;
+  border-bottom: 0.1rem solid #90a4ae;
   padding-top: 3rem;
 }
 
