@@ -2,9 +2,9 @@
 @section('title', 'ProjectART')
 
 @section('content')
-    <div class="container" style="margin-top: 5rem">
+    <div class="container">
         <section id="art-information" class="ct-block mt-5">
-            <div class="row justify-content-center" style="margin-top: 5rem">
+            <div class="row justify-content-center">
                 <div class="image-large">
                     <a href="{{$art->image_url}}">
                         <img src="{{$art->image_url}}" alt="{{$art->title}}">
@@ -16,6 +16,10 @@
                     <h1 class="mt-5 text-center">{{$art->title}}</h1>
                     <p>{{$art->description}}</p>
                 </div>
+            </div>
+            <div class="row justify-content-between mt-3 ct-block">
+                <span><b>Дата публикации:</b> {{$art->getCreatedAt()}}</span>
+                <span><b>Изменено:</b> {{$art->getUpdatedAt()}}</span>
             </div>
         </section>
 

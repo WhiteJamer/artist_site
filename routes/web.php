@@ -13,6 +13,7 @@
 
 Route::get('/', 'Site\SiteController@index');
 Route::get('/arts/load-more', 'Site\SiteController@loadMoreArts');
+Route::get('/arts', 'Site\SiteController@artList');
 Route::get('/arts/{id}', 'Site\SiteController@artDetail');
 
-Route::resource('arts', 'Admin\ArtController');
+Route::resource('/admin/arts', 'Admin\ArtController');

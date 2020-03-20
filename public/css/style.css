@@ -14,6 +14,7 @@ i {
 .wrapper {
   overflow: hidden;
   width: 100%;
+  margin-top: 5rem;
 }
 
 li {
@@ -86,6 +87,7 @@ p {
   background: #fff;
   width: 100%;
   border-bottom: 0.1rem solid #fff;
+  opacity: 95%;
 }
 
 .navbar-fixed li {

@@ -26,9 +26,18 @@ class Art extends Model
     {
         return static::orderBy('updated_at', 'desc')->paginate($count);
     }
-    function getShortDescription()
+
+    public function getShortDescription()
     {
         return mb_strimwidth($this->description, 0,1000, ' ...');
+    }
+
+    public function getCreatedAt() {
+        return \Carbon\Carbon::parse($this->created_at)->format('d.m.Y H:i');
+    }
+
+    public function getUpdatedAt() {
+        return \Carbon\Carbon::parse($this->updated_at)->format('d.m.Y H:i');
     }
 
 }

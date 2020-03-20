@@ -19,6 +19,11 @@ class SiteController extends Controller
         $art = Art::find($id);
         return view('site.arts.detail', ['art' => $art]);
     }
+    public function artList()
+    {
+        $arts = Art::get();
+        return view('site.arts.index', ['arts' => $arts]);
+    }
 
     public function loadMoreArts(Request $request)
     {
