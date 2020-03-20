@@ -26,5 +26,9 @@ class Art extends Model
     {
         return static::orderBy('updated_at', 'desc')->paginate($count);
     }
+    function getShortDescription()
+    {
+        return mb_strimwidth($this->description, 0,1000, ' ...');
+    }
 
 }

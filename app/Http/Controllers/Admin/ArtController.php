@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\models\Art;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ArtController extends Controller
 {
@@ -13,7 +16,8 @@ class ArtController extends Controller
      */
     public function index()
     {
-        //
+        $arts = Art::simplePaginate(5);;
+        return  view('admin.arts.index', compact('arts'));
     }
 
     /**

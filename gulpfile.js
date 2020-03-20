@@ -14,10 +14,10 @@ require('laravel-elixir-vue-2');
  */
 
 elixir((mix) => {
-    mix.sass([
-        'snippets.scss',
-        'style.scss'
-    ])
+    mix
+    .sass('style.scss')
+    .sass('snippets.scss')
+    .sass('admin-panel.scss')
     .webpack([
         'modal.js',
         'gallery.js'
