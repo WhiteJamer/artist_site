@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\models\Art;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ArtController extends Controller
 {
@@ -27,7 +28,7 @@ class ArtController extends Controller
      */
     public function create()
     {
-        
+        return  view('admin.arts.create');
     }
 
     /**
@@ -38,6 +39,17 @@ class ArtController extends Controller
      */
     public function store(Request $request)
     {
+        $image = $request->file('file');
+        $imagePath = $image->store('my-arts', 'public' );
+
+        $art = new Art();
+        $art->image_url = $imagePath;
+        $art->title = $request->input('title');
+        $art->description = $request->input('description');
+        $art->save();
+
+
+        return redirect()->route('admin.arts.index');
 
     }
 

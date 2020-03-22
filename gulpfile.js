@@ -18,8 +18,8 @@ elixir((mix) => {
     .sass('style.scss')
     .sass('snippets.scss')
     .sass('admin-panel.scss')
-    .webpack([
-        'modal.js',
-        'gallery.js'
-    ]);
+
+    .webpack('modal.js')
+    .webpack('gallery.js')
+    .webpack('dropzone.js')
 });
