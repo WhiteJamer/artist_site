@@ -16,7 +16,7 @@ class AddFullnameProfessionTaglineToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('full_name', 250);
             $table->string('profession', 250);
-            $table->string('tagline', 250); # слоган
+            $table->string('tagline', 250)->nullable(); # слоган
         });
     }
 

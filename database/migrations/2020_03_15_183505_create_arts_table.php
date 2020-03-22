@@ -16,10 +16,10 @@ class CreateArtsTable extends Migration
         Schema::create('arts', function (Blueprint $table) {
             $table->increments('id');
             $table->text('image_url');
-            $table->string('title', 255);
-            $table->text('description');
+            $table->string('title', 255)->nullable();
+            $table->text('description')->nullable();
             $table->integer('views')->default(0);
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade')
