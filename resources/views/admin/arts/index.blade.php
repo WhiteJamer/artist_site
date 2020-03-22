@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/reset.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/admin-panel.css">
+@extends('layouts.admin')
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet">
+@section('title', 'Список статей - Админ-панель')
 
-</head>
-<body>
-<ul class="top-nav row justify-content-center">
-    <li><a href="/">Главная</a></li>
-    <li><a href="/admin/arts">Арты</a></li>
-    <li><a href="#">Бан-лист</a></li>
-    <li><a href="#">Статистика</a></li>
-    <li><a href="#">Комментарии</a></li>
-</ul>
-<div class="container-fluid">
+@section('content')
+    <div class="container-fluid">
 
     <div class="row justify-content-center mt-3 p-3">
         <div class="col-md">
@@ -70,5 +52,4 @@
         {{$arts->links('pagination.default')}}
     </div>
 </div>
-</body>
-</html>
+@endsection

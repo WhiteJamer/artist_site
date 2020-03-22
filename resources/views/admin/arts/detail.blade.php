@@ -1,32 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/reset.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/admin-panel.css">
+@extends('layouts.admin')
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet">
+@section('title', 'Арт - ' . $art->title .' - Админ-панель')
 
-</head>
-<body>
-<ul class="top-nav row justify-content-center">
-    <li><a href="/">Главная</a></li>
-    <li><a href="/admin/arts">Арты</a></li>
-    <li><a href="#">Бан-лист</a></li>
-    <li><a href="#">Статистика</a></li>
-    <li><a href="#">Комментарии</a></li>
-</ul>
+@section('content')
 <div class="container">
 
     <div class="col-md">
         <div class="row mt-3">
             <a href="#" class="btn btn-secondary">Изменить</a>
-            <a href="#" class="btn btn-danger">Удалить</a>
+            <form action="{{ route('admin.arts.destroy', $art->id) }}" method="POST" >
+                {{csrf_field()}}
+                {{method_field('DELETE')}}
+                <button type="submit" class="btn btn-danger">Удалить</button>
+            </form>
         </div>
         <table class="table mt-3">
             <tbody>
@@ -71,5 +57,4 @@
         </table>
     </div>
 </div>
-</body>
-</html>
+@endsection
