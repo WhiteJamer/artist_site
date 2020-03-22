@@ -1,8 +1,9 @@
 <?php
 
 
-namespace App\models;
+namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Art extends Model
 {
@@ -17,9 +18,9 @@ class Art extends Model
 
     protected $guarded = ['views', 'user_id'];
 
-    public function owner()
+    public function user()
     {
-        return $this->hasOne('App\models\User');
+        return $this->belongsTo(User::class);
     }
     // Получить недавние работы
     static function getRecentArts($count)
@@ -32,12 +33,18 @@ class Art extends Model
         return mb_strimwidth($this->description, 0,1000, ' ...');
     }
 
-    public function getCreatedAt() {
+    public function getCreatedAt()
+    {
         return \Carbon\Carbon::parse($this->created_at)->format('d.m.Y H:i');
     }
 
-    public function getUpdatedAt() {
+    public function getUpdatedAt()
+    {
         return \Carbon\Carbon::parse($this->updated_at)->format('d.m.Y H:i');
+    }
+    public function getImageUrl()
+    {
+        return asset('/storage/' . $this->image_url);
     }
 
 }

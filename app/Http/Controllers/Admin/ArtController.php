@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\models\Art;
+use App\Models\Art;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -61,7 +61,8 @@ class ArtController extends Controller
      */
     public function show($id)
     {
-        //
+        $art = Art::find($id);
+        return view('admin.arts.detail', compact('art'));
     }
 
     /**

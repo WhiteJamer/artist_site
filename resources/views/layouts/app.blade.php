@@ -20,7 +20,7 @@
     <div class="navbar-fixed">
         <div class="container">
             <li><a href="/">Главная</a></li>
-            <li><a href="#arts">Работы</a></li>
+            <li><a href="/arts">Работы</a></li>
             <li><a href="#feedback">Контакты</a></li>
         </div>
     </div>

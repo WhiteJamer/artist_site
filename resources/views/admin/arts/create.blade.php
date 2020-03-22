@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <form action="{{route('admin.arts.store')}}" method="POST" enctype="multipart/form-data" class="form-group">
+        <form action="{{ route('admin.arts.store') }}" method="POST" enctype="multipart/form-data" class="form-group">
             {{csrf_field()}}
             <label for="file" class="mt-1">Изображение:</label>
             <input type="file" name="file" id="file" class="form-control">

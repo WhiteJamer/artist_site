@@ -7,7 +7,7 @@
             <div class="row justify-content-center">
                 <div class="image-large">
                     <a href="{{$art->image_url}}">
-                        <img src="{{$art->image_url}}" alt="{{$art->title}}">
+                        <img src="{{$art->getImageUrl()}}">
                     </a>
                 </div>
             </div>

@@ -4,13 +4,13 @@
 
 @section('content')
     <div class="container">
+        <h1 class="text-center">Все арты</h1>
         <div id="arts-list" class="image-list row">
-            {{-- 6 последних артов --}}
             @foreach($arts as $art)
                 <div class="image-item ">
 
                         <img class="modal-triger art-detail-triger"
-                             src="{{$art->image_url}}"
+                             src="{{$art->getImageUrl()}}"
                              alt="{{$art->title}}"
                              data-description="{{$art->description}}"
                              data-id="{{$art->id}}"

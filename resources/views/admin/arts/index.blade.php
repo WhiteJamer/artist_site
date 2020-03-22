@@ -49,7 +49,7 @@
                 <td>
                     <div class="image-item">
                         <a href="/arts/{{$art->id}}">
-                            <img src="{{$art->image_url}}" alt="img">
+                            <img src="{{$art->getImageUrl()}}" alt="img">
                         </a>
                     </div>
                 </td>
