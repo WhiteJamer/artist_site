@@ -288,6 +288,7 @@ footer a {
   padding: 1rem;
   margin: 0 auto;
   width: 70%;
+  min-height: 85%;
   max-height: 95%;
   overflow-y: auto;
 }

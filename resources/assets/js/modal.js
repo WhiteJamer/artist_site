@@ -1,11 +1,8 @@
-$(document).ready(function(){
-	$('.modal-triger').on('click', function(){
-		$('#modal').toggleClass('active');
-		$('#modal').animate({ scrollTop: 0},3000);
-		console.log('gg');
-		return false;
-	});
-	$('.modal-triger *').on('click', function(e){
-		e.stopPropagation();
-	});
+// Закрывает и открывает модольное окно.
+$(document).on('click', '.modal-triger', function(e){
+	e.stopPropagation();
+	$('#modal').toggleClass('active');
+	$('#modal .modal__wrapper').animate({ scrollTop: 0},1);
+	console.log('gg');
+	return false;
 });

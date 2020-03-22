@@ -1,10 +1,9 @@
-
-$('.art-detail-triger').on('click', function (e) {
+// Заполняет модальное окно информацией о работе на которую кликнул пользователь.
+$('.image-list').on('click', '.art-detail-triger', function () {
     var artId = $(this).attr('data-id')
     var imageUrl = $(this).attr('src');
     var imageTitle = $(this).attr('alt');
     var imageDescription = $(this).attr('data-description');
-    e.stopPropagation();
     $('.modal__title').html('<h5>Галерея изображений</h5>');
     $('.modal__content').html(`
         <div class="row justify-content-center">
@@ -19,5 +18,4 @@ $('.art-detail-triger').on('click', function (e) {
             </div>
         </div>
         `);
-
-})
+});

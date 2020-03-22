@@ -138,7 +138,7 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
     <script src="/js/modal.js"></script>
-    <script src="/js/all.js"></script>
+    <script src="/js/gallery.js"></script>
     {{-- LOAD-MORE BTN --}}
     <script>
         var pageNumber = 2;
