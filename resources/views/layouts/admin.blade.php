@@ -22,5 +22,16 @@
             <li><a href="#">Комментарии</a></li>
         </ul>
         @yield('content')
+        <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous"></script>
+        <script src="/js/modal.js"></script>
+        <script !src="">
+            $('.delete-form').on('submit', function(e){
+                if(!confirm($(this).attr('data-confirm')))
+                e.preventDefault();
+            })
+        </script>
     </body>
 </html>

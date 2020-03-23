@@ -7,8 +7,11 @@
 
     <div class="col-md">
         <div class="row mt-3">
-            <a href="#" class="btn btn-secondary">Изменить</a>
-            <form action="{{ route('admin.arts.destroy', $art->id) }}" method="POST" >
+            <a href="{{ route('admin.arts.edit', $art->id) }}" class="btn btn-secondary">Изменить</a>
+            <form action="{{ route('admin.arts.destroy', $art->id) }}"
+                  method="POST"
+                  data-confirm="Вы действительно хотите удалить этот арт? ID: {{$art->id}}"
+                  class="delete-form" >
                 {{csrf_field()}}
                 {{method_field('DELETE')}}
                 <button type="submit" class="btn btn-danger">Удалить</button>
@@ -51,7 +54,13 @@
                 </tr>
                 <tr>
                     <th>Автор</th>
-                    <th>{{$art->user->name}}</th>
+                    <th>
+                        @if($art->user)
+                            {{$art->user->name}}
+                        @else
+                            Не указан
+                        @endif
+                    </th>
                 </tr>
             </tbody>
         </table>

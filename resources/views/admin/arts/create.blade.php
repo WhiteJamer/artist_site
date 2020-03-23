@@ -4,6 +4,15 @@
 
 @section('content')
     <div class="container">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div><br />
+        @endif
         <form action="{{ route('admin.arts.store') }}" method="POST" enctype="multipart/form-data" class="form-group">
             {{csrf_field()}}
             <label for="file" class="mt-1">Изображение:</label>

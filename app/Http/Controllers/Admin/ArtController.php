@@ -39,17 +39,30 @@ class ArtController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'file' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         $image = $request->file('file');
-        $imagePath = $image->store('my-arts', 'public' );
+        $originalFileName = $image->getClientOriginalName();
+        $customName = strtolower(md5(uniqid($originalFileName))) . '.' . $image->getClientOriginalExtension();
 
-        $art = new Art();
-        $art->image_url = $imagePath;
-        $art->title = $request->input('title');
-        $art->description = $request->input('description');
-        $art->save();
+        #Загружаем картинку на сервер
+        $image = $request->file('file');
+        $imagePath = $image->storeAs('my-arts', $customName, 'public' );
 
+        $formData = array(
+          'title' => $request->title,
+          'description' => $request->description,
+          'image_url' => $imagePath
+        );
 
-        return redirect()->route('admin.arts.index');
+        Art::create($formData);
+
+        return redirect()
+            ->route('admin.arts.index');
 
     }
 
@@ -73,7 +86,8 @@ class ArtController extends Controller
      */
     public function edit($id)
     {
-        //
+        $art = Art::findOrFail($id);
+        return view('admin.arts.edit', compact('art'));
     }
 
     /**
@@ -85,7 +99,47 @@ class ArtController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $art = Art::find($id);
+        $imagePathRaw = explode('/', $art->image_url);
+        $imagePath = $imagePathRaw[array_key_last($imagePathRaw)];
+
+        $image = $request->file('file');
+
+        if($image != '')
+        {
+            $request->validate([
+                'file' => 'image|max:2048',
+                'title' => 'required',
+                'description' => 'required',
+            ]);
+
+            # Удаляем старую картинку
+            Storage::disk('public')
+                ->delete($art->image_url);
+
+            $imagePath = $image->storeAs('my-arts', $imagePath, 'public');
+
+        }
+        else
+        {
+            $request->validate([
+               'title' => 'required',
+               'description' => 'required'
+            ]);
+        }
+        $formData = array(
+            'title' => $request->title,
+            'description' => $request->description,
+            'image_url' => $imagePath
+        );
+
+        #Обновляем запись в бд
+        $art->update($formData);
+
+        return redirect()
+            ->route('admin.arts.index');
+
     }
 
     /**
@@ -96,6 +150,17 @@ class ArtController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $art = Art::find($id);
+
+        $storage = Storage::disk('local');
+        $storage->delete($art->image_url);
+
+        #Удаляем картинку с сервера
+        Storage::disk('public')
+            ->delete($art->image_url);
+        $art->delete();
+
+        return redirect()
+            ->route('admin.arts.index');
     }
 }
