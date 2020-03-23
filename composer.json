@@ -6,9 +6,10 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*",
-      "ext-mbstring": "*",
-      "ext-curl": "*"
+        "barryvdh/laravel-ide-helper": "^2.6",
+        "laravel/framework": "5.5.*",
+        "laravel/tinker": "~1.0",
+        "phpdocumentor/reflection-docblock": "^2.0.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
