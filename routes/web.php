@@ -16,4 +16,5 @@ Route::get('/arts/load-more', 'Site\SiteController@loadMoreArts')->name('site.in
 Route::get('/arts', 'Site\SiteController@artList')->name('site.arts.index');
 Route::get('/arts/{id}', 'Site\SiteController@artDetail')->name('site.arts.show');
 
+Route::get('admin/', 'Admin\ArtController@index', ['names' => 'admin']);
 Route::resource('/admin/arts', 'Admin\ArtController', ['names' => 'admin.arts']);
