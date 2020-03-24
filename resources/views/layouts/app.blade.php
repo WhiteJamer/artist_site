@@ -31,7 +31,7 @@
         <span><a href="http://github.com/WhiteJamer/">Whitejamer</a></span>
     </footer>
     {{-- Модальное окно --}}
-    <div id="modal" class="modal__overlay modal-triger">
+    <div id="modal" class="modal__overlay">
         <div class="modal__wrapper">
             <div class="col-md">
                 <div class="modal__header">
@@ -165,9 +165,6 @@
                 },
             });
         }
-
-    </script>
-    <script>
 
     </script>
 </div>

@@ -1,5 +1,6 @@
 // Заполняет модальное окно информацией о работе на которую кликнул пользователь.
-$('.image-list').on('click', '.art-detail-triger', function () {
+$('.image-list').on('click', '.art-detail-triger', function (e) {
+    e.preventDefault();
     var artId = $(this).attr('data-id')
     var imageUrl = $(this).attr('src');
     var imageTitle = $(this).attr('alt');

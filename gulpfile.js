@@ -16,10 +16,8 @@ require('laravel-elixir-vue-2');
 elixir((mix) => {
     mix
     .sass('style.scss')
-    .sass('snippets.scss')
     .sass('admin-panel.scss')
 
     .webpack('modal.js')
     .webpack('gallery.js')
-    .webpack('dropzone.js')
 });
