@@ -19,7 +19,6 @@ i{
 .wrapper{
 	overflow: hidden;
 	width: 100%;
-	margin-top: 5rem;
 }
 li{
 	list-style: none;
@@ -61,16 +60,13 @@ p{
 		width: 100%;
 	}
 }
-	.navbar-fixed
+	.navbar
 	{
 		z-index: 99;
-		position:fixed;
-		top: 0;
 		background: $header-bg;
 		width: 100%;
 		// border-bottom: 0.1rem solid $border_light;
 		border-bottom: 0.1rem solid $header_bg;
-		opacity: 95%;
 
 
 		& li{
@@ -79,7 +75,7 @@ p{
 			& a{
 				font-weight: 700;
 				color: $second_info_color;
-				padding: 1rem 0.5rem;
+				padding: 1rem 1rem;
 				&:hover{
 					color: $active_color;
 				}

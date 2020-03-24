@@ -5,6 +5,9 @@
     <div class="container">
         <section id="art-information" class="ct-block mt-5">
             <div class="row justify-content-center">
+                <h1>{{$art->title}}</h1>
+            </div>
+            <div class="row justify-content-center">
                 <div class="image-large">
                     <a href="{{$art->image_url}}">
                         <img src="{{$art->getImageUrl()}}">
@@ -13,7 +16,6 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-12">
-                    <h1 class="mt-5 text-center">{{$art->title}}</h1>
                     <p>{{$art->description}}</p>
                 </div>
             </div>

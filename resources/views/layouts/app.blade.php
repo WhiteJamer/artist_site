@@ -17,14 +17,11 @@
 
 </head>
 <body>
+<div class="navbar justify-content-center">
+    <li><a href="/">Главная</a></li>
+    <li><a href="/arts">Все работы</a></li>
+</div>
 <div class="wrapper">
-    <div class="navbar-fixed">
-        <div class="container">
-            <li><a href="/">Главная</a></li>
-            <li><a href="/arts">Работы</a></li>
-            <li><a href="#feedback">Контакты</a></li>
-        </div>
-    </div>
     @yield('content')
     <footer class="mt-5 row justify-content-center">
         <span class="develop" style="margin-right: 0.3rem">develop by</span>
@@ -34,102 +31,13 @@
     <div id="modal" class="modal__overlay">
         <div class="modal__wrapper">
             <div class="col-md">
-                <div class="modal__header">
-                    <div class="modal__title"><h5>Галерея изображений</h5></div>
+                <div class="modal__header justify-content-end">
                     <div><i class="modal-triger">&#10006;</i></div>
 
                 </div>
                 <div class="modal__content col-md">
                     {{-- Тут должен быть контент модального окна --}}
                 </div>
-                <section class="comment-section row">
-                    <div class="col-md">
-                        <div class="comment-item row">
-                            <div class="col-md">
-                                <div class="row">
-                                    <span class="ml-3"><b>Username</b></span>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-md-2">
-
-                                        <img class="comment__img" src="/images/avatar-1.png" alt="avatar">
-                                    </div>
-
-                                    <div class="col-md">
-                                        <div class="comment__text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed qui voluptatem quam, ipsum repellendus. Iste porro, facere sunt ipsa quia hic. Iure at omnis quos molestiae esse natus, eveniet, sit quisquam provident facere eum quo velit? Laborum, eius porro! Commodi beatae, est tenetur labore incidunt reiciendis! Tenetur repellat, vitae exercitationem.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="comment-item row">
-                            <div class="col-md">
-                                <div class="row">
-                                    <span class="ml-3"><b>Username</b></span>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-md-2">
-
-                                        <img class="comment__img" src="/images/avatar-1.png" alt="avatar">
-                                    </div>
-
-                                    <div class="col-md">
-                                        <div class="comment__text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed qui voluptatem quam, ipsum repellendus. Iste porro, facere sunt ipsa quia hic. Iure at omnis quos molestiae esse natus, eveniet, sit quisquam provident facere eum quo velit? Laborum, eius porro! Commodi beatae, est tenetur labore incidunt reiciendis! Tenetur repellat, vitae exercitationem.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="comment-item row">
-                            <div class="col-md">
-                                <div class="row">
-                                    <span class="ml-3"><b>Username</b></span>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-md-2">
-
-                                        <img class="comment__img" src="/images/avatar-1.png" alt="avatar">
-                                    </div>
-
-                                    <div class="col-md">
-                                        <div class="comment__text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed qui voluptatem quam, ipsum repellendus. Iste porro, facere sunt ipsa quia hic. Iure at omnis quos molestiae esse natus, eveniet, sit quisquam provident facere eum quo velit? Laborum, eius porro! Commodi beatae, est tenetur labore incidunt reiciendis! Tenetur repellat, vitae exercitationem.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="comment-item row">
-                            <div class="col-md">
-                                <div class="row">
-                                    <span class="ml-3"><b>Username</b></span>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-md-2">
-
-                                        <img class="comment__img" src="/images/avatar-1.png" alt="avatar">
-                                    </div>
-
-                                    <div class="col-md">
-                                        <div class="comment__text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed qui voluptatem quam, ipsum repellendus. Iste porro, facere sunt ipsa quia hic. Iure at omnis quos molestiae esse natus, eveniet, sit quisquam provident facere eum quo velit? Laborum, eius porro! Commodi beatae, est tenetur labore incidunt reiciendis! Tenetur repellat, vitae exercitationem.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <form action="" class="form-group feedback_form">
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Оставьте комментарий" class="form-control"></textarea>
-                            <button class="btn btn-send">Оставить комментарий</button>
-                        </form>
-                    </div>
-                </section>
             </div>
         </div>
     </div>

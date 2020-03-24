@@ -77,7 +77,7 @@
             <input type="text" name="email" placeholder="Ваш email">
         </div>
         <textarea name="message" id="" cols="30" rows="10" placeholder="Введите ваше сообщение"></textarea>
-        <button type="submit" class="btn btn-send">Отправить</button>
+        <button type="submit" class="btn btn-secondary">Отправить</button>
     </form>
 </div>
 @endsection

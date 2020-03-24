@@ -14,7 +14,6 @@ i {
 .wrapper {
   overflow: hidden;
   width: 100%;
-  margin-top: 5rem;
 }
 
 li {
@@ -80,27 +79,24 @@ p {
   width: 100%;
 }
 
-.navbar-fixed {
+.navbar {
   z-index: 99;
-  position: fixed;
-  top: 0;
   background: #fff;
   width: 100%;
   border-bottom: 0.1rem solid #fff;
-  opacity: 95%;
 }
 
-.navbar-fixed li {
+.navbar li {
   display: inline-flex;
 }
 
-.navbar-fixed li a {
+.navbar li a {
   font-weight: 700;
   color: #000;
-  padding: 1rem 0.5rem;
+  padding: 1rem 1rem;
 }
 
-.navbar-fixed li a:hover {
+.navbar li a:hover {
   color: #ff9a26;
 }
 
