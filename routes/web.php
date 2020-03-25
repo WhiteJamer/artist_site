@@ -18,3 +18,8 @@ Route::get('/arts/{id}', 'Site\SiteController@artDetail')->name('site.arts.show'
 
 Route::get('admin/', 'Admin\ArtController@index', ['names' => 'admin']);
 Route::resource('/admin/arts', 'Admin\ArtController', ['names' => 'admin.arts']);
+
+Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/home', 'HomeController@index')->name('home');
