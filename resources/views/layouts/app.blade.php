@@ -20,6 +20,12 @@
 <div class="navbar justify-content-center">
     <li><a href="/">Главная</a></li>
     <li><a href="/arts">Все работы</a></li>
+    <li><a href="{{ route('admin') }}">
+            @if (Auth::check())
+                {{Auth::user()->name}}
+            @endif
+        </a>
+    </li>
 </div>
 <div class="wrapper">
     @yield('content')

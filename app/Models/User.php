@@ -37,6 +37,8 @@ use App\Models\Art;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereTagline($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $is_admin
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereIsAdmin($value)
  */
 class User extends Authenticatable
 {
@@ -61,10 +63,14 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $fillable = ['name', 'email', 'full_name', 'profession', 'password'];
     protected $hidden = [
         'password', 'remember_token',
     ];
     public function posts(){
         return $this->hasMany(Art::class);
+    }
+    public function isAdmin(){
+        return ($this->is_admin === 1) ? true : false;
     }
 }
